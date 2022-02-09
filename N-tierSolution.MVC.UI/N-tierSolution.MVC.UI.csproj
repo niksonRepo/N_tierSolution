@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>N_tierSolution.MVC.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N_tierSolution.BLL\N_tierSolution.BLL.csproj" />
+    <ProjectReference Include="..\N_tierSolution.Entity\N_tierSolution.Entity.csproj" />
+  </ItemGroup>
+
+</Project>
