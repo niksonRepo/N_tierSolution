@@ -27,7 +27,7 @@ namespace N_tierSolution.MVC.UI.Controllers
             return View();
         }
 
-        public void AddStudent()
+        public void AddStudent(int id)
         {
             var student = new Students()
             {
