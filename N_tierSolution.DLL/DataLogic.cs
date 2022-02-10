@@ -44,7 +44,7 @@ namespace N_tierSolution.DLL
                                             'Surname' text);
 
                                             Insert Into Students
-                                            Values (1,'John','Doe');
+                                            Values ('John','Doe');
                                             ";
                 _dbConnection.Query<int>(createTablesQuery);
             }
