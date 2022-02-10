@@ -54,8 +54,6 @@ namespace N_tierSolution.DLL
 
         public void AddStudent(Students student)
         {
-            var query = @"Insert Into Students Values(1, 'John', 'Doe')";
-            _dbConnection.Query(query);
         }
 
         public List<Students> GetStudents()
