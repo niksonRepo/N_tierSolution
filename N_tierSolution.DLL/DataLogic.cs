@@ -24,8 +24,11 @@ namespace N_tierSolution.DLL
                 SQLiteConnection.CreateFile(dbFilePath);
             }
 
-            _dbConnection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;");
-            _dbConnection.Open();
+            if (_dbConnection == null)
+            {
+                _dbConnection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;");
+                _dbConnection.Open();
+            }
         }
 
         private static void CreateDataStructureIfNotExists()
