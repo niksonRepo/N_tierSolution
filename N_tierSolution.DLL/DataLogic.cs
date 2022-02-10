@@ -35,15 +35,13 @@ namespace N_tierSolution.DLL
         {
             var tablesCountQuery = @"SELECT count(*) FROM sqlite_master WHERE type='table' AND name='Students'";
             var count = _dbConnection.Query<int>(tablesCountQuery).FirstOrDefault();
-            
+
             if (count == 0)
             {
-                var createTablesQuery = @" CREATE TABLE Students(
-	                                            Id int IDENTITY(1,1) NOT NULL,
-	                                            Name text NULL,
-	                                            Surname text NULL,
-	                                            Primary Key (Id)
-	                                            );
+                var createTablesQuery = @"  CREATE TABLE 'Students' (
+                                            'Id' INTEGER PRIMARY KEY AUTOINCREMENT,
+                                            'Name' text,
+                                            'Surname' text);
 
                                             Insert Into Students
                                             Values (1,'John','Doe');
@@ -54,6 +52,8 @@ namespace N_tierSolution.DLL
 
         public void AddStudent(Students student)
         {
+            var query = @"Insert Into Students Values('John', 'Doe')";
+            _dbConnection.Query(query);
         }
 
         public List<Students> GetStudents()
@@ -62,8 +62,6 @@ namespace N_tierSolution.DLL
 
             return _dbConnection.Query<Students>(studentQuery).ToList();
         }
-
-
 
         public bool GetDataFromDb(int age)
         {
