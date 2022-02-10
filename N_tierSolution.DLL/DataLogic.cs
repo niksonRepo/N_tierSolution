@@ -52,7 +52,7 @@ namespace N_tierSolution.DLL
 
         public void AddStudent(Students student)
         {
-            var query = @"Insert Into Students Values('John', 'Doe')";
+            var query = @"Insert Into Students (Name, Surname) Values('John', 'Doe')";
             _dbConnection.Query(query);
         }
 
