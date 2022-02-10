@@ -9,10 +9,12 @@ namespace N_tierSolution.MVC.UI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BusinessLogic _businessLogic;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _businessLogic = new BusinessLogic();
         }
 
         public IActionResult Index()
@@ -27,12 +29,19 @@ namespace N_tierSolution.MVC.UI.Controllers
 
         public void AddStudent()
         {
+            var student = new Students()
+            {
+                Id = 1,
+                Name = "John",
+                Surname = "Doe"
+            };
 
+            _businessLogic.AddStudents(student);
         }
 
-        public void GetListOfStudents()
+        public List<Students> GetListOfStudents()
         {
-
+            return _businessLogic.GetStudentsList();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
