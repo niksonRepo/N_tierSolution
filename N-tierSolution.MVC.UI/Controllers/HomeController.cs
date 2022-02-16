@@ -27,7 +27,12 @@ namespace N_tierSolution.MVC.UI.Controllers
             return View();
         }
 
-        public void AddStudent(int id)
+        public IActionResult ModalPopUp()
+        {
+            return View();
+        }
+
+        public void AddStudent(string name)
         {
             var student = new Students()
             {

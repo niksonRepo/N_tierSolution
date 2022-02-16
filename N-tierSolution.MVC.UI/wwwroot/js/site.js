@@ -2,3 +2,13 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+$(document).ready(function() {
+    $('#myModal').on('shown.bs.modal',
+        function() {
+            $('#myInput').focus();
+
+        });
+
+    //$('#myModal').modal('show')
+});
